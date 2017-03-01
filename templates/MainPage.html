@@ -4,8 +4,10 @@
   <title>Main Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
- <link rel="stylesheet" href="css/MainStyle.css"> 
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" href="css/MainStyle.css"> -->
+ <link rel="stylesheet" href={{ static_url("css/MainStyle.css") }} type="text/css"/>
+   <link rel="stylesheet" href={{ static_url("css/bootstrap.min.css") }} type="text/css"/>
 
 </head>
 <body>
@@ -29,7 +31,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <form id="signin" class="navbar-form navbar-right" role="form">
+      <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="/index">
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -53,12 +55,12 @@
 <div class="container" >
     <div class="col-md-6" >
         <div id="logbox"  >
-            <form id="signup" method="post" action="index.html" >
+            <form id="signup" method="post" action="/index" >
                 <h1>Create an Account</h1>
-				 <input name="user[name]" type="text" placeholder="User Name" class="input pass"/>
-				 <input name="user[email]" type="email" placeholder="Email address" class="input pass"/>
-                <input name="user[age]" type="text" placeholder="Age" required="required" class="input pass"/>
-                <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass"/>
+				 <input name="name" type="text" placeholder="User Name" class="input pass"/>
+				 <input name="email" type="email" placeholder="Email address" class="input pass"/>
+                <input name="age" type="text" placeholder="Age" required="required" class="input pass"/>
+                <input name="password" type="password" placeholder="Choose a password" required="required" class="input pass"/>
                 <input type="submit" value="Sign me up!" class="inputButton"/>
 
             </form>
@@ -71,10 +73,12 @@
 </div>
 
      <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <!-- <script src="static/js/jquery.js"></script> -->
+      <script src="static/js/jquery-3.1.1.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="{{ static_url("css/bootstrap.min.css") }}" type="text/javascript"></script>
 
 </body>
 </html>
