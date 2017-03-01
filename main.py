@@ -66,7 +66,7 @@ class IndexHandler(tornado.web.RequestHandler):
                     print("val",val)
                     print("given",givenPass)
                     if(givenPass == val):
-                       print("Right user")
+                       print("Right User")
 
                     else:
                        print("No Login")
