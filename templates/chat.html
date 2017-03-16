@@ -4,31 +4,12 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tornado WebSockets</title>
-     </title>
     <link rel="stylesheet"  href="../static/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../static/css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="../static/css/style.css" type="text/css">
-    <script>
-        var ws;
-
-        function onLoad() {
-            ws = new WebSocket("ws://localhost:8888/websocket");
-
-            /// when massage recived from server
-            ws.onmessage = function(e) {
-               //alert(e.data);
-               console.log(e.data)
-            };
-        }
-
-        function sendMsg() {
-            ws.send(document.getElementById('msg').value);
-            ws.send("hello from client")
-        }
-    </script>
 </head>
-<body onload="onLoad();">
+<body >
 
      <!-- Start navbar  -->
        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" >
@@ -42,8 +23,11 @@
   <span class="icon-bar"></span>
   </button>
   <a class="navbar-brand page-scroll" href="#page-top">
-      <span>Eng.Penguino</span>
-          </a>
+      <span id="userNameChat"></span>
+  </a>
+  <a class="navbar-brand page-scroll" href="#page-top">
+      <span id="groupNameChat"></span>
+  </a>
     </div>
  <!-- Collect the nav links, forms, and other content for toggling -->
  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color: black;">
@@ -57,26 +41,44 @@
  <li>
  <a class="page-scroll" href="#people">People</a>
  </li>
+ <li> <a class="page-scroll" href="MainPage">Log out</a> </li>
  </ul>
  </div>
 <!-- /.navbar-collapse -->
 </div>
  <!-- /.container-fluid -->
  </nav>
+<!-- //////////////////////////////////////////////////////// End Navbar  ------------------------------------------->
 
-         <!-- End Navbar  -->
+    <div id="chatBody">
+         <p id="overOldMsg" style="margin-left: 17px; font-family: New; font-size: 16px;">
 
-    <div id="content">
-	<div id="online">
-	</div>
-   </div>
-<div id="msg" style="margin-top: 20px;">			
-    <strong>Message to Send:</strong><input type="text" id="msg" maxlength="25" />
-    <input type="button" class="btn btn-success del" onclick="sendMsg();" value="Send Message" />
+         </p>
+
+         <p id="over" style="margin-left: 17px; font-family: New; font-size: 16px;">
+
+         </p>
+    </div>
+
+
+ <div id="online">
+     <p style="margin-top: 9px;margin-left: 11px;">ONLINE</p>
+     <ul id="olineList">
+
+     </ul>
+     <p style="margin-top: 9px;margin-left: 11px;">OFFLINE</p>
+     <ul id="offlineList" style="color: grey">
+         klfddjksdjfsdjfkj
+     </ul>
+ </div>
+
+<div id="msg" style="margin-top: 20px; margin-left: 714px;">
+    <input type="text" id="msgText" maxlength="25"/>
+    <button id="sendMsg" class="btn btn-success new_msg">Send Message</button>
 </div>
 
 
-      <!-- jQuery
+      <!-- jQuery-->
     <script src="../static/js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../static/js/bootstrap.min.js"></script>
@@ -87,7 +89,8 @@
     <!-- Contact Form JavaScript -->
     <script src="../static/js/jqBootstrapValidation.js"></script>
     <script src="../static/js/contact_me.js"></script>
-    <script src="../static/js/plugin.js" ></script>
-
+    <!-- <script src="../static/js/index.js" ></script> -->
+    <script src="../static/js/chat.js" ></script>
+    <!-- <script src="../static/js/index.js" ></script> -->
 </body>
 </html>
