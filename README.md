@@ -1,12 +1,6 @@
 # pythonProject
 ChatGame
 
-
- Chat Game
-
- Chat Game
-
-
 How to run the app:
 1.clone or download the repository
 2. restore “chatRR” data base to your mongodb
